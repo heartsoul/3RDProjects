@@ -1,0 +1,41 @@
+10
+
+dir
+4
+http://192.168.0.203:82/svn/tourismo/IOSApps/cellMaxMinDemo
+http://192.168.0.203:82/svn/tourismo
+
+
+
+2011-07-20T05:22:31.442421Z
+4
+sagar
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba26ffbb-3b64-4660-83f2-febe9b84f976
+
+
+
+
+
+
+0
+
+cellMaxMinDemo
+dir
+
+cellMaxMinDemo.xcodeproj
+dir
+

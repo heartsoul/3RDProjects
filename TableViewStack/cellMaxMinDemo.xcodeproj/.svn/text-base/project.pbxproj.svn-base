@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E44EC3313D5A6D200CC0C15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E44EC3213D5A6D200CC0C15 /* UIKit.framework */; };
+		1E44EC3513D5A6D200CC0C15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E44EC3413D5A6D200CC0C15 /* Foundation.framework */; };
+		1E44EC3713D5A6D200CC0C15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E44EC3613D5A6D200CC0C15 /* CoreGraphics.framework */; };
+		1E44EC3D13D5A6D200CC0C15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E44EC3B13D5A6D200CC0C15 /* InfoPlist.strings */; };
+		1E44EC4013D5A6D200CC0C15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E44EC3F13D5A6D200CC0C15 /* main.m */; };
+		1E44EC4313D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E44EC4213D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.m */; };
+		1E44EC4613D5A6D200CC0C15 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E44EC4413D5A6D200CC0C15 /* MainWindow.xib */; };
+		1E44EC4913D5A6D200CC0C15 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E44EC4813D5A6D200CC0C15 /* RootViewController.m */; };
+		1E44EC4C13D5A6D200CC0C15 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E44EC4A13D5A6D200CC0C15 /* RootViewController.xib */; };
+		1E44EC5313D5A6F200CC0C15 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E44EC5213D5A6F200CC0C15 /* data.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1E44EC2E13D5A6D200CC0C15 /* cellMaxMinDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cellMaxMinDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E44EC3213D5A6D200CC0C15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1E44EC3413D5A6D200CC0C15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1E44EC3613D5A6D200CC0C15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1E44EC3A13D5A6D200CC0C15 /* cellMaxMinDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cellMaxMinDemo-Info.plist"; sourceTree = "<group>"; };
+		1E44EC3C13D5A6D200CC0C15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E44EC3E13D5A6D200CC0C15 /* cellMaxMinDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cellMaxMinDemo-Prefix.pch"; sourceTree = "<group>"; };
+		1E44EC3F13D5A6D200CC0C15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1E44EC4113D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cellMaxMinDemoAppDelegate.h; sourceTree = "<group>"; };
+		1E44EC4213D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cellMaxMinDemoAppDelegate.m; sourceTree = "<group>"; };
+		1E44EC4513D5A6D200CC0C15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		1E44EC4713D5A6D200CC0C15 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1E44EC4813D5A6D200CC0C15 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1E44EC4B13D5A6D200CC0C15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		1E44EC5213D5A6F200CC0C15 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E44EC2B13D5A6D200CC0C15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44EC3313D5A6D200CC0C15 /* UIKit.framework in Frameworks */,
+				1E44EC3513D5A6D200CC0C15 /* Foundation.framework in Frameworks */,
+				1E44EC3713D5A6D200CC0C15 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E44EC2313D5A6D200CC0C15 = {
+			isa = PBXGroup;
+			children = (
+				1E44EC3813D5A6D200CC0C15 /* cellMaxMinDemo */,
+				1E44EC3113D5A6D200CC0C15 /* Frameworks */,
+				1E44EC2F13D5A6D200CC0C15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E44EC2F13D5A6D200CC0C15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E44EC2E13D5A6D200CC0C15 /* cellMaxMinDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E44EC3113D5A6D200CC0C15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E44EC3213D5A6D200CC0C15 /* UIKit.framework */,
+				1E44EC3413D5A6D200CC0C15 /* Foundation.framework */,
+				1E44EC3613D5A6D200CC0C15 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E44EC3813D5A6D200CC0C15 /* cellMaxMinDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1E44EC4113D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.h */,
+				1E44EC4213D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.m */,
+				1E44EC4413D5A6D200CC0C15 /* MainWindow.xib */,
+				1E44EC4713D5A6D200CC0C15 /* RootViewController.h */,
+				1E44EC4813D5A6D200CC0C15 /* RootViewController.m */,
+				1E44EC4A13D5A6D200CC0C15 /* RootViewController.xib */,
+				1E44EC3913D5A6D200CC0C15 /* Supporting Files */,
+			);
+			path = cellMaxMinDemo;
+			sourceTree = "<group>";
+		};
+		1E44EC3913D5A6D200CC0C15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E44EC3A13D5A6D200CC0C15 /* cellMaxMinDemo-Info.plist */,
+				1E44EC3B13D5A6D200CC0C15 /* InfoPlist.strings */,
+				1E44EC3E13D5A6D200CC0C15 /* cellMaxMinDemo-Prefix.pch */,
+				1E44EC3F13D5A6D200CC0C15 /* main.m */,
+				1E44EC5213D5A6F200CC0C15 /* data.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E44EC2D13D5A6D200CC0C15 /* cellMaxMinDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E44EC4F13D5A6D200CC0C15 /* Build configuration list for PBXNativeTarget "cellMaxMinDemo" */;
+			buildPhases = (
+				1E44EC2A13D5A6D200CC0C15 /* Sources */,
+				1E44EC2B13D5A6D200CC0C15 /* Frameworks */,
+				1E44EC2C13D5A6D200CC0C15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cellMaxMinDemo;
+			productName = cellMaxMinDemo;
+			productReference = 1E44EC2E13D5A6D200CC0C15 /* cellMaxMinDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E44EC2513D5A6D200CC0C15 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1E44EC2813D5A6D200CC0C15 /* Build configuration list for PBXProject "cellMaxMinDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1E44EC2313D5A6D200CC0C15;
+			productRefGroup = 1E44EC2F13D5A6D200CC0C15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E44EC2D13D5A6D200CC0C15 /* cellMaxMinDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E44EC2C13D5A6D200CC0C15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44EC3D13D5A6D200CC0C15 /* InfoPlist.strings in Resources */,
+				1E44EC4613D5A6D200CC0C15 /* MainWindow.xib in Resources */,
+				1E44EC4C13D5A6D200CC0C15 /* RootViewController.xib in Resources */,
+				1E44EC5313D5A6F200CC0C15 /* data.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E44EC2A13D5A6D200CC0C15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E44EC4013D5A6D200CC0C15 /* main.m in Sources */,
+				1E44EC4313D5A6D200CC0C15 /* cellMaxMinDemoAppDelegate.m in Sources */,
+				1E44EC4913D5A6D200CC0C15 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1E44EC3B13D5A6D200CC0C15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E44EC3C13D5A6D200CC0C15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1E44EC4413D5A6D200CC0C15 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E44EC4513D5A6D200CC0C15 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		1E44EC4A13D5A6D200CC0C15 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E44EC4B13D5A6D200CC0C15 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E44EC4D13D5A6D200CC0C15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1E44EC4E13D5A6D200CC0C15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		1E44EC5013D5A6D200CC0C15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cellMaxMinDemo/cellMaxMinDemo-Prefix.pch";
+				INFOPLIST_FILE = "cellMaxMinDemo/cellMaxMinDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1E44EC5113D5A6D200CC0C15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cellMaxMinDemo/cellMaxMinDemo-Prefix.pch";
+				INFOPLIST_FILE = "cellMaxMinDemo/cellMaxMinDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E44EC2813D5A6D200CC0C15 /* Build configuration list for PBXProject "cellMaxMinDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44EC4D13D5A6D200CC0C15 /* Debug */,
+				1E44EC4E13D5A6D200CC0C15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E44EC4F13D5A6D200CC0C15 /* Build configuration list for PBXNativeTarget "cellMaxMinDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E44EC5013D5A6D200CC0C15 /* Debug */,
+				1E44EC5113D5A6D200CC0C15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E44EC2513D5A6D200CC0C15 /* Project object */;
+}

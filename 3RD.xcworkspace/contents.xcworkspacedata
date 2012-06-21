@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TableViewStack/cellMaxMinDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PhotoStatck/SWSnapshotStackViewDemo/SWSnapshotStackViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PhotoFlip/test.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PhotoBrowser/Demo/PhotoBrowserDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MBProgressHUD/MBProgressHUD.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:KeyboardAvoid/TPKeyboardAvoidingSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InAppPurchase/EBPurchase-Demo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull.xcodeproj">
+   </FileRef>
+</Workspace>

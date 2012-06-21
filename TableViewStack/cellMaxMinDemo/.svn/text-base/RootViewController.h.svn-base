@@ -1,0 +1,18 @@
+//
+//  RootViewController.h
+//  cellMaxMinDemo
+//
+//  Created by digicorp on 19/07/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface RootViewController : UITableViewController {
+	
+}
+
+@property (nonatomic, retain) NSArray *arrayOriginal;
+@property (nonatomic, retain) NSMutableArray *arForTable;
+
+@end
