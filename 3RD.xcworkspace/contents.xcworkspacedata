@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TableViewFolder/JWFoldersDemo/JWFoldersDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -24,8 +27,5 @@
    </FileRef>
    <FileRef
       location = "group:InAppPurchase/EBPurchase-Demo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull.xcodeproj">
    </FileRef>
 </Workspace>

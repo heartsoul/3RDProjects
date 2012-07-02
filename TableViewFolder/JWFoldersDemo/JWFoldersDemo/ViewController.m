@@ -14,8 +14,51 @@
 }
 
 - (void)viewDidLoad {
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper"]];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, -200, self.view.frame.size.width, 200)];
+    _logo = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 320, 50)];
+    [_logo setText:@"COOCOC"];
+    [_logo setBackgroundColor:[UIColor clearColor]];
+    [_logo setFont:[UIFont systemFontOfSize:24]];
+    [_logo setTextColor:[UIColor orangeColor]];
+    [_logo setTextAlignment:UITextAlignmentCenter];
+    [view addSubview:_logo];
+    [view setBackgroundColor:[UIColor clearColor]];
+    [self.tableView addSubview:view];
 }
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+    CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
+//    offset = MIN(offset, 60);
+//    scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
+    if (offset > 50) {
+        CGRect frame = _logo.frame;
+        frame.origin.y = 150 - (offset-50)/2;
+        _logo.frame = frame;
+        NSLog(@"%f", _logo.frame.origin.y);
+    }
+//	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {    
+    _logo.frame =  CGRectMake(0, 150, 320, 50);
+}
+
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//	
+////	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.5];
+//    scrollView.contentInset = UIEdgeInsetsMake(.0f, 0.0f, 0.0f, 0.0f);
+//    [UIView commitAnimations];
+//}
+
 
 #pragma mark - Folder Example
 
@@ -37,8 +80,11 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     [[cell textLabel] setText:[self.dataSource objectAtIndex:indexPath.row]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setBackgroundColor:[UIColor grayColor]];    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
