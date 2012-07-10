@@ -1,9 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "FolderViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 {
-    FolderViewController *sampleFolder;
     UILabel *_logo;
 }
 

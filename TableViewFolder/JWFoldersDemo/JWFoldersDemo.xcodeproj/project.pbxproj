@@ -16,8 +16,6 @@
 		AB2CB9CC14AE8CF30072F455 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2CB9CB14AE8CF30072F455 /* AppDelegate.m */; };
 		AB2CB9CF14AE8CF30072F455 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2CB9CE14AE8CF30072F455 /* ViewController.m */; };
 		AB2CB9D214AE8CF30072F455 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2CB9D014AE8CF30072F455 /* ViewController.xib */; };
-		AB2CB9DF14AE8D3D0072F455 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2CB9DD14AE8D3D0072F455 /* FolderViewController.m */; };
-		AB2CB9E014AE8D3D0072F455 /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2CB9DE14AE8D3D0072F455 /* FolderViewController.xib */; };
 		AB2CB9F314AE8DAB0072F455 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2CB9F114AE8DA30072F455 /* QuartzCore.framework */; };
 		AB9280CA14AF8BC5000578BD /* JWFolders.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9280C514AF8BC5000578BD /* JWFolders.m */; };
 		AB9280CB14AF8BC5000578BD /* UIScreen+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9280C714AF8BC5000578BD /* UIScreen+Scale.m */; };
@@ -40,9 +38,6 @@
 		AB2CB9CD14AE8CF30072F455 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AB2CB9CE14AE8CF30072F455 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AB2CB9D114AE8CF30072F455 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		AB2CB9DC14AE8D3C0072F455 /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
-		AB2CB9DD14AE8D3D0072F455 /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
-		AB2CB9DE14AE8D3D0072F455 /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
 		AB2CB9F114AE8DA30072F455 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AB9280C414AF8BC5000578BD /* JWFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFolders.h; sourceTree = "<group>"; };
 		AB9280C514AF8BC5000578BD /* JWFolders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWFolders.m; sourceTree = "<group>"; };
@@ -104,9 +99,6 @@
 				AB2CB9CD14AE8CF30072F455 /* ViewController.h */,
 				AB2CB9CE14AE8CF30072F455 /* ViewController.m */,
 				AB2CB9D014AE8CF30072F455 /* ViewController.xib */,
-				AB2CB9DC14AE8D3C0072F455 /* FolderViewController.h */,
-				AB2CB9DD14AE8D3D0072F455 /* FolderViewController.m */,
-				AB2CB9DE14AE8D3D0072F455 /* FolderViewController.xib */,
 				AB9280C314AF8BC5000578BD /* JWFolders */,
 				AB2CB9C214AE8CF30072F455 /* Supporting Files */,
 			);
@@ -192,7 +184,6 @@
 			files = (
 				AB2CB9C614AE8CF30072F455 /* InfoPlist.strings in Resources */,
 				AB2CB9D214AE8CF30072F455 /* ViewController.xib in Resources */,
-				AB2CB9E014AE8D3D0072F455 /* FolderViewController.xib in Resources */,
 				ABF7821314BCED8B0026C74B /* noise.png in Resources */,
 				579C711415A174300031D1E2 /* wallpaper.png in Resources */,
 			);
@@ -208,7 +199,6 @@
 				AB2CB9C814AE8CF30072F455 /* main.m in Sources */,
 				AB2CB9CC14AE8CF30072F455 /* AppDelegate.m in Sources */,
 				AB2CB9CF14AE8CF30072F455 /* ViewController.m in Sources */,
-				AB2CB9DF14AE8D3D0072F455 /* FolderViewController.m in Sources */,
 				AB9280CA14AF8BC5000578BD /* JWFolders.m in Sources */,
 				AB9280CB14AF8BC5000578BD /* UIScreen+Scale.m in Sources */,
 				AB9280CC14AF8BC5000578BD /* UIView+Screenshot.m in Sources */,
@@ -287,6 +277,7 @@
 		AB2CB9D614AE8CF30072F455 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JWFoldersDemo/JWFoldersDemo-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -299,6 +290,7 @@
 		AB2CB9D714AE8CF30072F455 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JWFoldersDemo/JWFoldersDemo-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;

@@ -94,14 +94,16 @@
     
     NSLog(@"%f", tableView.contentOffset.y);
     CGPoint openPoint = CGPointMake(.0f, cell.frame.origin.y+cell.frame.size.height-tableView.contentOffset.y); //arbitrary point
-    sampleFolder = [[FolderViewController alloc] initWithNibName:NSStringFromClass([FolderViewController class]) bundle:nil];
-    CGRect frame = sampleFolder.view.frame;
+    UIView *noiseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+    noiseView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noise"]];
+
+    CGRect frame = noiseView.frame;
     if (openPoint.y < 260)
         frame.origin.y = openPoint.y;
     else
         frame.origin.y = 260;
-    sampleFolder.view.frame = frame;
-    [self openFolderWithContentView:sampleFolder.view position:openPoint];
+    noiseView.frame = frame;
+    [self openFolderWithContentView:noiseView position:openPoint];
 }
 
 - (void)openFolderWithContentView:(UIView *)contentView position:(CGPoint)openPoint {
