@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Reefaq-FlipView/FlipView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Flip-Transform/transform.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull.xcodeproj">
    </FileRef>
    <FileRef

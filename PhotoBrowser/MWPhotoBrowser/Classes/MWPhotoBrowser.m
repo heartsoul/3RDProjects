@@ -827,13 +827,15 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 	
     // Checks
 	if (!_viewIsActive || _performingLayout || _rotating) return;
-	
+	NSLog(@"%f", _pagingScrollView.bounds.origin.x);
+    
 	// Tile pages
 	[self tilePages];
 	
 	// Calculate current page
 	CGRect visibleBounds = _pagingScrollView.bounds;
 	int index = (int)(floorf(CGRectGetMidX(visibleBounds) / CGRectGetWidth(visibleBounds)));
+    NSLog(@"index: %d -- %f/%f\n", index, CGRectGetMidX(visibleBounds), CGRectGetWidth(visibleBounds));
     if (index < 0) index = 0;
 	if (index > [self numberOfPhotos] - 1) index = [self numberOfPhotos] - 1;
 	NSUInteger previousCurrentPage = _currentPageIndex;

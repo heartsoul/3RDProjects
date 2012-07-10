@@ -17,6 +17,7 @@
 
 
 @implementation ViewController
+@synthesize scrollView;
 
 - (void)viewDidLoad
 {
@@ -181,6 +182,7 @@
 
 - (void)viewDidUnload
 {
+    [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     
@@ -193,6 +195,7 @@
     demoPurchase.delegate = nil;
     [demoPurchase release];
     
+    [scrollView release];
     [super dealloc];
 }
 
