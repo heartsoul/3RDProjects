@@ -1,33 +1,52 @@
 //
 //  AppDelegate.m
-//  PageScroller
+//  IndexScrollController
 //
-//  Created by zheng yan on 12-7-3.
+//  Created by zheng yan on 12-7-18.
 //  Copyright (c) 2012年 anjuke. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
-#import "ViewController.h"
+#import "ContentViewController.h"
+#import "IndexScrollController.h"
+#import "IndexScrollView.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
 
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    
+    // init content controllers
+    NSMutableArray *contentControllers = [NSMutableArray array];
+    for (int i = 0; i < 5; i++) {
+        ContentViewController *controller = [[ContentViewController alloc] init];
+        controller.pageNumber = i;
+        controller.title = [NSString stringWithFormat:@"Page %d", i];
+        controller.view.frame = CGRectMake(0, 0, 320, 416-INDEX_SCROLL_VIEW_HEIGHT);
+        [contentControllers addObject:controller];
+        [controller release];
+    }
+
+    // fill in a navigation controller
+    IndexScrollController *scrollController = [[IndexScrollController alloc] init];
+    scrollController.contentControllers = contentControllers;
+    scrollController.title = @"Index Scroll Demo";
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scrollController];
+    self.window.rootViewController = navController;
+    
+    [navController release];
+    
+//    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

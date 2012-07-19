@@ -201,7 +201,7 @@
     panRecognizer.delegate = self;
     panRecognizer.maximumNumberOfTouches = 1;
     panRecognizer.minimumNumberOfTouches = 1;
-    [self.view addGestureRecognizer:panRecognizer];
+    [self.view addGestureRecognizer:panRecognizer];    
 }
 
 - (void)onBackButtonPressed:(UIBarButtonItem *)sender

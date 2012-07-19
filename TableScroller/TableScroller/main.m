@@ -1,8 +1,8 @@
 //
 //  main.m
-//  PageScroller
+//  TableScroller
 //
-//  Created by zheng yan on 12-7-3.
+//  Created by zheng yan on 12-7-17.
 //  Copyright (c) 2012年 anjuke. All rights reserved.
 //
 
