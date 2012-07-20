@@ -57,6 +57,7 @@
         _indexScrollView = [[[IndexScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, INDEX_SCROLL_VIEW_HEIGHT)] autorelease];
     
     [_indexScrollView setTitles:[_contentControllers valueForKeyPath:@"title"]];    
+    [_indexScrollView setIndexScrollController:self];
     [self.view addSubview:_indexScrollView];
     
     // 3. show controller
@@ -85,11 +86,11 @@
     if (index >= self.contentControllers.count)
         return;
     
-    currentPlaceIndex = index+1;
+    NSLog(@"jump to controller: %d", index);
     
+    currentPlaceIndex = index+1;    
     CGPoint offset = self.contentScrollView.contentOffset;
     offset.x = _scrollViewWidth*currentPlaceIndex;
-    NSLog(@"offset:%f, width: %f", offset.x, _scrollViewWidth);
     
     self.contentScrollView.contentOffset = offset;
     [self pageChanged];
@@ -107,7 +108,7 @@
     frame.origin.x = _scrollViewWidth*index;
     controller.view.frame = frame;
     [self.contentScrollView addSubview:controller.view];
-    NSLog(@"===== place controller %d at %d, x: %f", [self.contentControllers indexOfObject:controller], index, frame.origin.x);
+//    NSLog(@"===== place controller %d at position %d, x: %f", [self.contentControllers indexOfObject:controller], index, frame.origin.x);
 }
 
 - (UIViewController *)controllerForPlaceIndex:(NSUInteger)placeIndex {    

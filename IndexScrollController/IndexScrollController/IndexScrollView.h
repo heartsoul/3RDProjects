@@ -17,6 +17,8 @@
 @interface IndexScrollView : UIView<UIScrollViewDelegate> {
     CGFloat _labelWidth;
     CGFloat _labelHeight;
+    NSUInteger _currentLabelIndex;
+    NSUInteger _indexCount;
 }
 
 @property (nonatomic, retain) NSMutableArray *titles;

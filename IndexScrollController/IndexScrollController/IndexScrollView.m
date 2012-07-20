@@ -41,11 +41,12 @@
     if (_titles)
         [_titles release];
     
+    _indexCount = titles.count;
     _titles = [titles mutableCopy];
     NSRange first2Range, last2Range;
     first2Range.location = 0;
     first2Range.length = 2;
-    last2Range.location = _titles.count-2;
+    last2Range.location = _indexCount-2;
     last2Range.length = 2;
     
     NSArray *first2 = [_titles subarrayWithRange:first2Range];
@@ -59,9 +60,22 @@
 }
 
 - (void)scrollToIndex:(NSInteger)index {
+    NSLog(@"scroll page %d -> %d", _currentLabelIndex, index);
+
+    // switch offset: first <-> last
+    if (_currentLabelIndex == _indexCount-1 && index == 0) {
+        CGPoint firstLabelOffset = CGPointMake(_labelWidth*0, 0);
+        [_scrollView setContentOffset:firstLabelOffset];
+    } else if (_currentLabelIndex == 0 && index == _indexCount-1) {
+        CGPoint lastLabelOffset = CGPointMake(_labelWidth*(_indexCount+1), 0);
+        _scrollView.contentOffset = lastLabelOffset;        
+    }
+    
     CGPoint offset = _scrollView.contentOffset;
     offset.x = _labelWidth*(index+1);
+    NSLog(@"%f -> %f", _scrollView.contentOffset.x, offset.x);
     [_scrollView setContentOffset:offset animated:YES];
+    _currentLabelIndex = index;
 }
 
 - (void)layoutIndexTitles {
@@ -87,22 +101,47 @@
 }
      
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    int count = self.titles.count;
-    
-    if (scrollView.contentOffset.x > _labelWidth * (count-3)) {
-        CGPoint offset = scrollView.contentOffset;
-        offset.x -= _labelWidth*(count-4);        
-        scrollView.contentOffset = offset;
-    }
-    else if (scrollView.contentOffset.x < _labelWidth/2) {
-        CGPoint offset = scrollView.contentOffset;
-        offset.x += _labelWidth*count;
-        scrollView.contentOffset = offset;        
-    }
+//    if (scrollView.contentOffset.x > _labelWidth * (_indexCount+1)) {
+//        CGPoint offset = scrollView.contentOffset;
+//        offset.x -= _labelWidth*_indexCount;        
+//        scrollView.contentOffset = offset;
+//    }
+//    else if (scrollView.contentOffset.x < _labelWidth*2) {
+//        CGPoint offset = scrollView.contentOffset;
+//        offset.x += _labelWidth*_indexCount;
+//        scrollView.contentOffset = offset;        
+//    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    
+    NSLog(@"end scroll dragging");    
+    [self adjust];
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    NSLog(@"end scroll animation");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {    // called when scroll view grinds to a halt
+    NSLog(@"end scroll decelerating");
+    [self adjust];
+}
+
+- (void)adjust {
+    NSUInteger posIndex = _scrollView.contentOffset.x / _labelWidth;
+    CGFloat distance = _scrollView.contentOffset.x - posIndex * _labelWidth;
+    if (distance > _labelWidth/2)
+        posIndex += 1;
+    
+    NSLog(@"\n\nstop %f at pos: %d, page: %d", _scrollView.contentOffset.x, posIndex, posIndex-3);
+
+    int pageIndex = posIndex-3;
+    if (pageIndex < 0 || pageIndex > _indexCount)
+        return;
+    
+    _currentLabelIndex = pageIndex;    
+    if ([self.indexScrollController respondsToSelector:@selector(didIndexScrolledToIndex:)])
+        [self.indexScrollController didIndexScrolledToIndex:pageIndex+1];
+
+}
 @end
