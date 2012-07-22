@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *titles;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, assign) id<IndexScrollViewDelegate> indexScrollController;
+@property (nonatomic, assign) BOOL ignoreScroll;
 
 - (void)scrollToIndex:(NSInteger)index;
 

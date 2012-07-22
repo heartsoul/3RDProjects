@@ -17,6 +17,7 @@
 @synthesize contentControllers = _contentControllers;
 @synthesize indexScrollView = _indexScrollView;
 @synthesize contentScrollView = _contentScrollView;
+@synthesize jumpFromIndex = _jumpFromIndex;
 
 - (id)init {
     self = [super initWithNibName:nil bundle:nil];
@@ -122,7 +123,8 @@
 
 - (void)pageChanged {
     [self placeController:[self controllerForPlaceIndex:currentPlaceIndex] atIndex:currentPlaceIndex];
-    [self.indexScrollView scrollToIndex:[self controllerIndexFromPlaceIndex:currentPlaceIndex]];
+    if (!_jumpFromIndex)
+        [self.indexScrollView scrollToIndex:[self controllerIndexFromPlaceIndex:currentPlaceIndex]];
     
     // place last controller's screenshot at the first placement
     int preIndex = currentPlaceIndex-1;
@@ -165,7 +167,9 @@
 
 #pragma mark - IndexScrollView Delegate
 - (void)didIndexScrolledToIndex:(NSInteger)index {
+    _jumpFromIndex = YES;
     [self jumpToControllerIndex:index];
+    _jumpFromIndex = NO;
 }
 
 @end

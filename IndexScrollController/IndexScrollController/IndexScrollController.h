@@ -20,6 +20,7 @@
 // member variables
 @property (nonatomic, retain) UIScrollView *contentScrollView;
 @property (nonatomic, retain) IndexScrollView *indexScrollView;
+@property (nonatomic, assign) BOOL jumpFromIndex;
 
 - (void)jumpToControllerIndex:(NSUInteger)index;
 
