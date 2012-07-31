@@ -28,7 +28,7 @@
 
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;        
-        _scrollView.decelerationRate = .2;
+//        _scrollView.decelerationRate = .2;
         _labelWidth = self.scrollView.bounds.size.width/3;
         _labelHeight = self.scrollView.bounds.size.height;
     }
@@ -113,13 +113,13 @@
     if (scrollView.contentOffset.x > _labelWidth * _indexCount+_labelWidth*.5) {
         CGPoint offset = scrollView.contentOffset;
         offset.x -= _labelWidth*_indexCount;        
-        NSLog(@"%f <<< : %f", scrollView.contentOffset.x, offset.x);        
+        NSLog(@"%f <<< : (%f)\n", offset.x, scrollView.contentOffset.x);        
         scrollView.contentOffset = offset;
     }
     else if (scrollView.contentOffset.x < _labelWidth*.5) {
         CGPoint offset = scrollView.contentOffset;
         offset.x += _labelWidth*_indexCount;
-        NSLog(@" %f >>> : %f", scrollView.contentOffset.x, offset.x);
+        NSLog(@"(%f) >>> : %f\n", scrollView.contentOffset.x, offset.x);
         scrollView.contentOffset = offset;        
     }
 }

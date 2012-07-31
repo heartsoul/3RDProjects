@@ -16,6 +16,7 @@
 		57AA90AE15B69EDB001D4629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA90AD15B69EDB001D4629 /* AppDelegate.m */; };
 		57AA90B615B69EF6001D4629 /* IndexScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA90B515B69EF6001D4629 /* IndexScrollController.m */; };
 		57AA90BC15B69F9A001D4629 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA90BB15B69F9A001D4629 /* ContentViewController.m */; };
+		57B064FA15C1029800F860EF /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B064F915C1029800F860EF /* MyScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		57AA90B515B69EF6001D4629 /* IndexScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexScrollController.m; sourceTree = "<group>"; };
 		57AA90BA15B69F9A001D4629 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		57AA90BB15B69F9A001D4629 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		57B064F815C1029800F860EF /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		57B064F915C1029800F860EF /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				57AA90A615B69EDB001D4629 /* InfoPlist.strings */,
 				57AA90A915B69EDB001D4629 /* main.m */,
 				57AA90AB15B69EDB001D4629 /* IndexScrollController-Prefix.pch */,
+				57B064F815C1029800F860EF /* MyScrollView.h */,
+				57B064F915C1029800F860EF /* MyScrollView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				57AA90B615B69EF6001D4629 /* IndexScrollController.m in Sources */,
 				57AA90BC15B69F9A001D4629 /* ContentViewController.m in Sources */,
 				5721507D15B7DFA900F2D170 /* IndexScrollView.m in Sources */,
+				57B064FA15C1029800F860EF /* MyScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

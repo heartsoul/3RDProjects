@@ -1,56 +1,53 @@
 //
 //  AppDelegate.m
-//  IndexScrollController
+//  ReadExif
 //
-//  Created by zheng yan on 12-7-18.
+//  Created by zheng yan on 12-4-26.
 //  Copyright (c) 2012年 anjuke. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ContentViewController.h"
-#import "IndexScrollController.h"
-#import "IndexScrollView.h"
+#import "ViewController.h"
+#import "RTCoreDataManager.h"
+#import "RTLogger.h"
+#import "RTLocationManager.h"
+#import "RTLogCacheManager.h"
+#import "RTDeviceInfo.h"
+#import "CrashLogUtil.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (void)dealloc
 {
     [_window release];
+    [_viewController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSUInteger i = 12;
-    NSLog(@"ceiling=%d, floor=%f", (int)ceil(1.0*i/5), floor(1.0*i/5));
+    [CrashLogUtil writeCrashLog];
+
+    // init RTManagers
+    [[RTCoreDataManager sharedInstance] setModelName:@"ReadExif"];
     
+    [[RTLogger sharedInstance] setCacheDelegate:[RTLogCacheManager sharedInstance]];
+    [[RTLogger sharedInstance] setInfoDelegate:[RTLocationManager sharedInstance]];
+    [[RTLogger sharedInstance] setLogAppName:@"i-crashtest"];
+    
+    [[RTRequestProxy sharedInstance] setChannelID:[RTDeviceInfo channelId]];
+    [[RTRequestProxy sharedInstance] setLogger:[RTLogger sharedInstance]];
+
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    
-    // init content controllers
-    NSMutableArray *contentControllers = [NSMutableArray array];
-    for (int i = 0; i < 5; i++) {
-        ContentViewController *controller = [[ContentViewController alloc] init];
-        controller.pageNumber = i;
-        controller.title = [NSString stringWithFormat:@"Page %d", i];
-        controller.view.frame = CGRectMake(0, 0, 320, 416-INDEX_SCROLL_VIEW_HEIGHT);
-        [contentControllers addObject:controller];
-        [controller release];
-    }
-
-    // fill in a navigation controller
-    IndexScrollController *scrollController = [[IndexScrollController alloc] init];
-    scrollController.contentControllers = contentControllers;
-    scrollController.title = @"Index Scroll Demo";
-
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scrollController];
-    self.window.rootViewController = navController;
-    
-    [navController release];
-    
-//    self.window.backgroundColor = [UIColor whiteColor];
+    // Override point for customization after application launch.
+    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -64,16 +61,23 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [CrashLogUtil logAppEnd];
+    [[RTLogger sharedInstance] logAppEnterBackground];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [CrashLogUtil writeCrashLog];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[RTLocationManager sharedInstance] restartLocation];
+    
+    [CrashLogUtil logAppStart];
+    [[RTLogger sharedInstance] logAppBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
